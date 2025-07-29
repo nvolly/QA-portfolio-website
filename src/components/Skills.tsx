@@ -6,40 +6,38 @@ const Skills = () => {
     {
       title: "Automation Frameworks",
       color: "text-primary",
-      skills: ["Selenium WebDriver", "Cypress", "Playwright", "TestCafe", "Appium", "Robot Framework"]
+      skills: ["Playwright", "Cypress", "Appium", "Cucumber", "REST Assured"]
     },
     {
       title: "Programming Languages",
       color: "text-tech-blue",
-      skills: ["Java", "Python", "JavaScript", "TypeScript", "C#", "Groovy"]
+      skills: ["JavaScript", "TypeScript", "Python"]
     },
     {
       title: "API Testing",
       color: "text-tech-green", 
-      skills: ["REST Assured", "Postman", "Newman", "SoapUI", "Karate", "Insomnia"]
+      skills: ["REST Assured", "Grpc", "Fix", "Postman", "Swagger"]
     },
     {
-      title: "CI/CD & DevOps",
+      title: "CI/CD & Cload platforms",
       color: "text-tech-purple",
-      skills: ["Jenkins", "GitHub Actions", "GitLab CI", "Docker", "Kubernetes", "Azure DevOps"]
+      skills: ["Jenkins", "GitHub Actions", "Azure DevOps", "Google cloud platform"]
     },
     {
       title: "Testing Tools",
       color: "text-primary",
-      skills: ["JIRA", "TestRail", "Allure", "ExtentReports", "BrowserStack", "Sauce Labs"]
+      skills: ["JIRA", "TestRail", "Zephyr"]
     },
     {
       title: "Performance Testing",
       color: "text-tech-blue",
-      skills: ["JMeter", "LoadRunner", "K6", "Artillery", "BlazeMeter", "Gatling"]
+      skills: ["JMeter", "Artillery"]
+    },
+        {
+      title: "SQL testing",
+      color: "text-tech-blue",
+      skills: ["Sqlserver", "PostgreSQL", "MySQL", "NoSQL"]
     }
-  ];
-
-  const certifications = [
-    "ISTQB Foundation Level",
-    "Selenium WebDriver Certification",
-    "AWS Cloud Practitioner",
-    "Scrum Master Certified"
   ];
 
   return (
@@ -78,20 +76,10 @@ const Skills = () => {
             </Card>
           ))}
         </div>
-
-        <div className="bg-gradient-card rounded-lg p-8 border border-primary/20">
-          <h3 className="text-2xl font-bold mb-6 text-center text-foreground">Certifications & Training</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {certifications.map((cert, index) => (
-              <Badge 
-                key={index} 
-                variant="outline" 
-                className="text-primary border-primary/40 hover:bg-primary/10 transition-colors px-4 py-2 text-sm"
-              >
-                {cert}
-              </Badge>
-            ))}
-          </div>
+        <div className="text-center">
+          <p className="text-lg text-muted-foreground">
+            This diverse skill set enables me to tackle complex testing challenges and deliver high-quality software solutions.
+          </p>
         </div>
       </div>
     </section>
