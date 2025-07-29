@@ -1,37 +1,25 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Play } from "lucide-react";
+import { Github, Play } from "lucide-react"; // Removed ExternalLink
 
 const Projects = () => {
   const projects = [
     {
-      title: "E-commerce Test Automation Suite",
-      description: "Comprehensive end-to-end testing framework for a major e-commerce platform covering user journeys, payment processing, and inventory management.",
-      technologies: ["Selenium", "Java", "TestNG", "Maven", "Jenkins"],
+      title: "Fintech Test Automation Suite",
+      description: "Comprehensive end-to-end testing framework for a fintech application, covering UI, API, and BDD testing.",
+      technologies: ["Playwright", "Typescript", "Github Actions"],
       metrics: ["90% test coverage", "70% faster execution", "85% bug detection rate"],
-      type: "Web Automation"
-    },
-    {
-      title: "Mobile Banking App Testing",
-      description: "Cross-platform mobile testing solution for iOS and Android banking applications including biometric authentication and transaction flows.",
-      technologies: ["Appium", "Python", "Pytest", "BrowserStack", "GitLab CI"],
-      metrics: ["15+ devices tested", "99.9% reliability", "50% time reduction"],
-      type: "Mobile Testing"
-    },
-    {
-      title: "Microservices API Test Framework",
-      description: "Scalable API testing framework for microservices architecture with contract testing, load testing, and comprehensive reporting.",
-      technologies: ["REST Assured", "Java", "Docker", "JMeter", "Allure"],
-      metrics: ["200+ APIs tested", "Contract validation", "Performance baseline"],
-      type: "API Testing"
+      type: "Web Automation",
+      githubUrl: "https://github.com/nvolly/Playwright-TDV-Ts"
     },
     {
       title: "Performance Testing Dashboard",
-      description: "Real-time performance monitoring and testing dashboard that integrates with CI/CD pipeline to track application performance metrics.",
-      technologies: ["K6", "JavaScript", "Grafana", "InfluxDB", "GitHub Actions"],
+      description: "Real-time performance monitoring and testing dashboard that integrates with Github Actions to track application performance metrics.",
+      technologies: ["Artillery", "Typescript", "GitHub Actions"],
       metrics: ["Real-time monitoring", "Automated alerts", "Performance trending"],
-      type: "Performance"
+      type: "Performance",
+      githubUrl: "https://github.com/nvolly/Playwright-TDV-Ts"
     }
   ];
 
@@ -66,12 +54,15 @@ const Projects = () => {
                     {project.type}
                   </Badge>
                   <div className="flex gap-2">
-                    <Button variant="ghost" size="icon" className="h-8 w-8 opacity-60 group-hover:opacity-100 transition-opacity">
-                      <Github className="w-4 h-4" />
-                    </Button>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 opacity-60 group-hover:opacity-100 transition-opacity">
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="ghost" size="icon" className="h-8 w-8 opacity-60 group-hover:opacity-100 transition-opacity">
+                        <Github className="w-4 h-4" />
+                      </Button>
+                    </a>
                   </div>
                 </div>
                 <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
@@ -108,13 +99,6 @@ const Projects = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            <Github className="w-5 h-5 mr-2" />
-            View All Projects on GitHub
-          </Button>
         </div>
       </div>
     </section>

@@ -5,49 +5,64 @@ import { Building2, Calendar, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior QA Automation Engineer",
-      company: "TechCorp Solutions",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
+      title: "QA Automation Engineer",
+      company: "Tradeville",
+      location: "Bucharest",
+      period: "July 2024 - Present",
       type: "Full-time",
-      description: "Lead automation testing initiatives for enterprise-level applications serving 10M+ users. Design and implement comprehensive testing strategies that reduced production bugs by 60%.",
+      description: "Developed automation testing initiatives for an fintech platform",
       achievements: [
-        "Architected test automation framework reducing test execution time by 75%",
-        "Led team of 5 QA engineers implementing best practices across multiple projects",
+        "Expertise in testing stock market and crypto applications;",
+        "Achieved 95% automated test coverage with over 3000 automated tests",
         "Integrated automated testing into CI/CD pipeline achieving 99.5% deployment success rate",
-        "Mentored junior engineers and conducted technical interviews"
+        "Collaborated with infrastructure team, Java backend developers, React frontend developers and Mysql developers",
       ],
-      technologies: ["Selenium", "Java", "Kubernetes", "Jenkins", "AWS"]
+      technologies: ["Playwright", "Javascript", "Azure devops", "Sql server", "Appium", "Postgresql", "Grafana"]
     },
     {
       title: "QA Automation Engineer",
-      company: "FinanceFlow Inc",
-      location: "New York, NY",
-      period: "2020 - 2022",
+      company: "Mindgeek",
+      location: "Bucharest",
+      period: "April 2023 - July 2024",
       type: "Full-time", 
-      description: "Developed automated testing solutions for financial applications with strict compliance requirements. Specialized in API testing and performance validation.",
+      description: "Developed automated testing solutions for high-traffic web application",
       achievements: [
         "Built comprehensive API testing suite covering 200+ endpoints",
-        "Implemented performance testing reducing response time by 40%",
+        "Reduced manual testing effort by 80% through strategic automation",
         "Achieved 95% automated test coverage for critical user journeys",
         "Collaborated with security team on vulnerability testing protocols"
       ],
-      technologies: ["REST Assured", "Python", "JMeter", "Docker", "Postman"]
+      technologies: ["Playwright", "Javascript", "Postman", "Google cloud platform", "Kibana"]
     },
     {
       title: "QA Engineer",
-      company: "StartupTech",
-      location: "Austin, TX",
-      period: "2019 - 2020",
+      company: "In-tech Engineering",
+      location: "Bucharest",
+      period: "June 2022 - April 2023",
       type: "Full-time",
-      description: "Established testing processes and automation practices for a rapidly growing startup. Transitioned from manual to automated testing workflows.",
+      description: "Established testing processes and automation practices for a rapidly growing small company.",
       achievements: [
         "Created first automated testing framework for the company",
         "Reduced manual testing effort by 80% through strategic automation",
         "Implemented bug tracking and test management processes",
         "Supported product launches with zero critical defects"
       ],
-      technologies: ["Cypress", "JavaScript", "GitHub Actions", "TestRail"]
+      technologies: ["Cypress", "JavaScript", "Bitbucket", "Jira"]
+    },
+        {
+      title: "QA Engineer",
+      company: "Luxoft",
+      location: "Bucharest",
+      period: "June 2021 - June 2022",
+      type: "Full-time",
+      description: "Transitioned from manual to automated testing workflows.",
+      achievements: [
+        "Created test cases from scratch",
+        "Reported bugs and issues in Jira",
+        "Collaborated with developers to resolve issues",
+        "Participated in daily standups and sprint planning"
+      ],
+      technologies: ["Python", "Linux", "Api", "Jira"]
     }
   ];
 

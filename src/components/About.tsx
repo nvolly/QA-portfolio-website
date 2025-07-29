@@ -6,7 +6,7 @@ const About = () => {
     {
       icon: <Code2 className="w-8 h-8 text-primary" />,
       title: "Technical Excellence",
-      description: "Expert in multiple testing frameworks including Selenium, Cypress, Playwright, and REST Assured"
+      description: "Expert in multiple testing frameworks including Playwright, Cypress, Appium, Cucumber and REST Assured"
     },
     {
       icon: <Zap className="w-8 h-8 text-tech-blue" />,
@@ -35,7 +35,7 @@ const About = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             With over 5 years of experience in QA automation, I transform manual testing processes into efficient, 
             automated solutions that scale with business needs. My expertise spans web, mobile, and API testing across 
-            various industries including fintech, e-commerce, and healthcare.
+            various industries including fintech and high-traffic web applications.
           </p>
         </div>
 

@@ -23,13 +23,16 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button variant="hero" size="lg" className="group">
-              <Download className="w-5 h-5 group-hover:animate-bounce" />
-              Download Resume
-            </Button>
-            <Button variant="outline" size="lg">
-              View Projects
-            </Button>
+            <a
+              href="QA_Automation_Valentin_Dragomir.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="hero" size="lg" className="group">
+                <Download className="w-5 h-5 group-hover:animate-bounce" />
+                Download Resume
+              </Button>
+            </a>
           </div>
 
           <div className="flex justify-center space-x-6">
