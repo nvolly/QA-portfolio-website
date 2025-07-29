@@ -10,7 +10,7 @@ const Navigation = () => {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" }
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -18,11 +18,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              QA Pro
-            </span>
-          </div>
+          <div className="flex-shrink-0"></div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
@@ -40,11 +36,7 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="hero" size="sm">
-              Download CV
-            </Button>
-          </div>
+          <div className="hidden md:block"></div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -54,7 +46,11 @@ const Navigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-foreground"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>
