@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
-import emailjs from "emailjs-com";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Loader2,
+  Check,
+  X,
+} from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
 const Contact = () => {
-  const [form, setForm] = useState({
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -15,16 +29,55 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailto = `mailto:dragomirvalentin1994@yahoo.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(
-      `Name: ${form.firstName} ${form.lastName}\nEmail: ${form.email}\n\n${form.message}`
-    )}`;
-    window.location.href = mailto;
+
+    if (!form.current) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Valentin", // Your name that will receive the email
+      };
+
+      await emailjs.send(
+        "service_7x2x0gq", // Replace with your EmailJS service ID
+        "template_4y9f3q9", // Replace with your EmailJS template ID
+        templateParams,
+        "X6uKZcXfZ9z3X9X9X" // Replace with your EmailJS public key
+      );
+
+      toast.success("Message sent successfully!");
+      setIsSuccess(true);
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      setTimeout(() => setIsSuccess(false), 3000);
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      toast.error(
+        "Failed to send message. Please try again later or contact me directly at dragomirvalentin1994@yahoo.com"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -35,8 +88,9 @@ const Contact = () => {
             Let's Connect
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to discuss how I can contribute to your team's quality goals? 
-            Let's talk about your testing challenges and automation opportunities.
+            Ready to discuss how I can contribute to your team's quality goals?
+            Let's talk about your testing challenges and automation
+            opportunities.
           </p>
         </div>
 
@@ -44,11 +98,14 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                Get in Touch
+              </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always interested in new opportunities, challenging projects, and 
-                connecting with fellow QA professionals. Whether you're looking to hire, 
-                collaborate, or just want to discuss testing strategies, I'd love to hear from you.
+                I'm always interested in new opportunities, challenging
+                projects, and connecting with fellow QA professionals. Whether
+                you're looking to hire, collaborate, or just want to discuss
+                testing strategies, I'd love to hear from you.
               </p>
             </div>
 
@@ -59,7 +116,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Email</h4>
-                  <p className="text-muted-foreground">dragomirvalentin1994@yahoo.com</p>
+                  <p className="text-muted-foreground">
+                    dragomirvalentin1994@yahoo.com
+                  </p>
                 </div>
               </div>
 
@@ -92,7 +151,11 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
                     <Github className="w-5 h-5" />
                   </Button>
                 </a>
@@ -101,7 +164,11 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
                     <Linkedin className="w-5 h-5" />
                   </Button>
                 </a>
@@ -112,71 +179,102 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="bg-gradient-card border-primary/20">
             <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Send Message</CardTitle>
+              <CardTitle className="text-2xl text-foreground">
+                Send Message
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">First Name</label>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      First Name
+                    </label>
                     <Input
                       name="firstName"
                       placeholder="John"
                       className="bg-background/50"
-                      value={form.firstName}
+                      value={formData.firstName}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">Last Name</label>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      Last Name
+                    </label>
                     <Input
                       name="lastName"
                       placeholder="Doe"
                       className="bg-background/50"
-                      value={form.lastName}
+                      value={formData.lastName}
                       onChange={handleChange}
                       required
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Email
+                  </label>
                   <Input
                     name="email"
                     type="email"
                     placeholder="john.doe@company.com"
                     className="bg-background/50"
-                    value={form.email}
+                    value={formData.email}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Subject</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Subject
+                  </label>
                   <Input
                     name="subject"
                     placeholder="Job Opportunity / Project Discussion"
                     className="bg-background/50"
-                    value={form.subject}
+                    value={formData.subject}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Message</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Message
+                  </label>
                   <Textarea
                     name="message"
                     placeholder="Tell me about your project or opportunity..."
                     className="bg-background/50 min-h-[120px]"
-                    value={form.message}
+                    value={formData.message}
                     onChange={handleChange}
                     required
                   />
                 </div>
-                <Button type="submit" variant="hero" className="w-full">
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                <Button
+                  type="submit"
+                  variant="hero"
+                  className="w-full"
+                  disabled={isSubmitting || isSuccess}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending...
+                    </>
+                  ) : isSuccess ? (
+                    <>
+                      <Check className="w-4 h-4 mr-2" />
+                      Message Sent!
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
