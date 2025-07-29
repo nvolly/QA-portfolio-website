@@ -6,7 +6,7 @@ This is my personal QA Automation portfolio, designed to showcase my skills, exp
 
 👉 [Visit the site](https://www.getyourqa.com)
 
-## 🛠️ Built With
+## 🛠️ Built with tools
 
 This project is built using modern web technologies for performance and maintainability:
 
