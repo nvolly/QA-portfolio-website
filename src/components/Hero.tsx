@@ -27,7 +27,7 @@ const Hero = () => {
             in end-to-end testing, API automation, and performance testing.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 mt-16">
             <a
               href="QA_Automation_Valentin_Dragomir.pdf"
               target="_blank"
@@ -40,7 +40,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center space-x-12">
             <a
               href="https://www.linkedin.com/in/dragomir-valentin-672a05157/"
               target="_blank"
@@ -52,7 +52,7 @@ const Hero = () => {
                 size="icon"
                 className="hover:text-primary transition-colors"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-16 h-16" />
               </Button>
             </a>
             <a
@@ -65,7 +65,7 @@ const Hero = () => {
                 size="icon"
                 className="hover:bg-primary hover:text-primary-foreground transition-colors"
               >
-                <Github className="w-6 h-6" />
+                <Github className="w-16 h-16" />
               </Button>
             </a>
             <a
@@ -77,7 +77,7 @@ const Hero = () => {
                 size="icon"
                 className="hover:text-primary transition-colors"
               >
-                <Mail className="w-6 h-6" />
+                <Mail className="w-16 h-16" />
               </Button>
             </a>
           </div>
