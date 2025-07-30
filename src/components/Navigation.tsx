@@ -70,9 +70,15 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="px-3 py-2">
-                <Button variant="hero" size="sm" className="w-full">
-                  Download CV
-                </Button>
+                <a
+                  href="/QA_Automation_Valentin_Dragomir.pdf"
+                  download="Valentin_Dragomir_CV.pdf"
+                  className="w-full block"
+                >
+                  <Button variant="hero" size="sm" className="w-full">
+                    Download CV
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
