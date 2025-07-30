@@ -56,17 +56,16 @@ const Hero = () => {
               </Button>
             </a>
             <a
-              href="QA_Automation_Valentin_Dragomir.pdf"
+              href="https://github.com/nvolly"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Download CV"
             >
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:text-primary transition-colors"
+                className="hover:bg-primary hover:text-primary-foreground transition-colors"
               >
-                <Download className="w-6 h-6" />
+                <Github className="w-6 h-6" />
               </Button>
             </a>
             <a
