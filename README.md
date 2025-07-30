@@ -4,7 +4,7 @@ This is my personal QA Automation portfolio, designed to showcase my skills, exp
 
 ## 🔗 Live Website
 
-👉 [Visit the site](https://www.getyourqa.com)
+👉 [Visit the site](https://www.getyourqa.com) - https://www.getyourqa.com
 
 ## 🛠️ Built with tools
 
@@ -17,17 +17,6 @@ This project is built using modern web technologies for performance and maintain
 
 ## 📁 Features
 
-- 💼 Portfolio layout to highlight your QA experience
+- 💼 Portfolio layout to highlight my QA experience
 - 📄 Modular and clean component structure
-- 🌐 Responsive design across devices
-- ⚙️ Easy to customize and expand with new content
-
-## 🚀 Getting Started
-
-Clone the repo and run locally:
-
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
-npm install
-npm run dev
+- 🌐 Responsive design across desktop and mobile devices
