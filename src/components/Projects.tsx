@@ -80,14 +80,9 @@ const Projects = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="px-2 py-1 text-sm font-medium bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                     >
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-8 w-8 opacity-60 group-hover:opacity-100 transition-opacity"
-                      >
-                        <Github className="w-4 h-4" />
-                      </Button>
+                      View on GitHub
                     </a>
                   </div>
                 </div>
