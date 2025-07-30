@@ -48,11 +48,10 @@ const Contact = () => {
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_name: "Valentin",
       };
 
       await emailjs.send(
-        "service_ta2afe8",
+        "service_niv6367",
         "template_92ccirf",
         templateParams,
         "QCPBoC4VOQX5BuOFN"
