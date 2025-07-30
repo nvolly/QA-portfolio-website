@@ -48,14 +48,14 @@ const Contact = () => {
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_name: "Valentin", // Your name that will receive the email
+        to_name: "Valentin",
       };
 
       await emailjs.send(
-        "service_7x2x0gq", // Replace with your EmailJS service ID
-        "template_4y9f3q9", // Replace with your EmailJS template ID
+        "service_ta2afe8",
+        "template_92ccirf",
         templateParams,
-        "X6uKZcXfZ9z3X9X9X" // Replace with your EmailJS public key
+        "QCPBoC4VOQX5BuOFN"
       );
 
       toast.success("Message sent successfully!");
