@@ -13,7 +13,7 @@ const Hero = () => {
         ></div>
       </div>
 
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-6 text-center relative z-10 pt-20">
         <div className="max-w-4xl mx-auto">
           <h1 className="break-words overflow-visible text-3xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent animate-glow">
             QA Automation Engineer
