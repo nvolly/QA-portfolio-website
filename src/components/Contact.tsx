@@ -80,22 +80,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="pt-10 pb-20 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Let's Connect
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to discuss how I can contribute to your team's quality goals?
-            Let's talk about your testing challenges and automation
-            opportunities.
-          </p>
-        </div>
+        <div className="text-center mb-16"></div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-8 translate-x-[-2px]">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 Get in Touch
@@ -103,7 +94,7 @@ const Contact = () => {
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 I'm always interested in new opportunities, challenging
                 projects, and connecting with fellow QA professionals. Whether
-                you're looking to hire, collaborate, or just want to discuss
+                you're looking to hire, collaborate or just want to discuss
                 testing strategies, I'd love to hear from you.
               </p>
             </div>
@@ -176,7 +167,9 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="bg-gradient-card border-primary/20">
+          {/* <div className="flex justify-center px-4 sm:px-6">
+            <div className="w-full max-w-xl ml-[6==rem] sm:ml-0"> */}
+          <Card className="bg-gradient-card translate-x-[-20px] border-primary/20">
             <CardHeader>
               <CardTitle className="text-2xl text-foreground">
                 Send Message
@@ -278,6 +271,8 @@ const Contact = () => {
               </form>
             </CardContent>
           </Card>
+          {/* </div>
+          </div> */}
         </div>
       </div>
     </section>
