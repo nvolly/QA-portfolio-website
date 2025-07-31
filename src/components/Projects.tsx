@@ -71,7 +71,9 @@ const Projects = () => {
                 <div className="flex justify-between items-start mb-2">
                   <Badge
                     variant="outline"
-                    className={`${getTypeColor(project.type)} border-current`}
+                    className={`${getTypeColor(
+                      project.type
+                    )} border-current ml-[-10px] sm:ml-0 text-center leading-tight`}
                   >
                     {project.type}
                   </Badge>
@@ -80,7 +82,7 @@ const Projects = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-2 py-1 text-sm font-medium bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                      className="px-2 py-2 text-xs font-medium bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                     >
                       View on GitHub
                     </a>
